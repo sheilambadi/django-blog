@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Articles</title>
+    <link rel="stylesheet" href={% static 'bootstrap.min.css'%}>
 </head>
 <body>
-    <h1>Article List</h1>
-    <div class="articles">
-        {% for article in articles %}
-
-        <div class="article">
-            <h2><a href="#">{{ article.title }}</a></h2>
-            <p>{{ article.snippet }}</p>
-            <p>{{ article.date }}</p>
+    <div class="container">
+        <h1>Article List</h1>
+        <div class="articles">
+            {% for article in articles %}
+            <div class="article">
+                <h2><a href="#">{{ article.title }}</a></h2>
+                <p>{{ article.snippet }}</p>
+                <p>{{ article.date }}</p>
+             </div>
+            {% endfor %}
         </div>
-
-        {% endfor %}
-    </div>
+    </div>    
+   <script src={% static 'bootstrap.min.js' %}></script> 
 </body>
 </html>
