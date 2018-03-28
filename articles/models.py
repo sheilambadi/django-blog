@@ -12,3 +12,7 @@ class Article(models.Model):
     #to display string version of object and not the object in the interactive shell and admin section
     def __str__(self):
         return self.title
+
+    def snippet(self):
+        #return first 50 chars
+        return self.body[:100] + '...'
