@@ -10,15 +10,31 @@
 </head>
 <body>
     <div class="container">
-        <h1>Article List</h1>
-        <div class="articles">
-            {% for article in articles %}
-            <div class="article">
-                <h2><a href="#">{{ article.title }}</a></h2>
-                <p>{{ article.snippet }}</p>
-                <p>{{ article.date }}</p>
-             </div>
-            {% endfor %}
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="display-4 mb-2 my-2">Article List</h1>
+                <div>
+                    {% for article in articles %}
+                    <div class="card mb-4 box-shadow h-md-250">                        
+                        <div class="card-header bg-white">
+                            <h3 class="mb-0">
+                                <a class = "text-dark" href="#">{{ article.title }}</a>
+                            </h3>        
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <p class="lead">{{ article.snippet }}</p>
+                                <p class="md-2"><a href="#">Continue reading</a></p>
+                                <p class="text-muted">{{ article.date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4 class="display-4 mb-2 my-2">Tags</h1>
+            </div>
         </div>
     </div>    
    <script src={% static 'bootstrap.min.js' %}></script> 
