@@ -1,15 +1,17 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-<div class="jumbotron text-white rounded bg-dark">
+<div class="jumbotron text-black rounded bg-white">
      <div class="container text-center">
-        <h1 class="display-4 font-italic">{{ article.title }}</h1>         
+        <h1 class="display-4 font-bold">{{ article.title }}</h1>         
         <p class="lead my-3 d-inline">Posted on </p>
         <p class="lead my-3 d-inline text-muted">{{article.date}}</p>
     </div>
 </div>
-
-<div class="container mx-auto article_detail">
+<div class="container">
+    <img class="card-img-top" src="{{ article.thumb.url }}" alt="Image Here"> 
+</div>
+<div class="container mx-auto article_detail my-4">
     <p class="lead text-justify">
         {{article.body}}
     </p>
