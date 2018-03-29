@@ -1,8 +1,12 @@
-#article_detail {
+.article_detail {
     font-size: 20px;
     color: #212529;
     font-family: Lora,'Times New Roman',serif;
+}
 
+.article_snippet {
+    color: #212529;
+    font-family: Lora,'Times New Roman',serif;
 }
 
 p {

@@ -24,9 +24,16 @@
                         </div>
                         <div class="card-body">
                             <div class="card-text">
-                                <p class="lead">{{ article.snippet }}</p>
-                                <p class="md-2"><a href="{% url 'articles:article_detail' slug=article.slug%}">Continue reading</a></p>
-                                <p class="text-muted">{{ article.date }}</p>
+                                <p class="lead article_snippet">{{ article.snippet }}</p>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <p><a href="{% url 'articles:article_detail' slug=article.slug%}">Continue reading</a></p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="text-muted float-right">{{ article.date }}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
