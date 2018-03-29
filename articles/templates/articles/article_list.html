@@ -1,7 +1,7 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-    <div class="jumbotron text-white rounded bg-dark">
+    <div class="jumbotron jumbotron-fluid text-white rounded bg-dark">
         <div class="container text-center">
           <h1 class="display-4 d-inline">Welcome to </h1>
           <h1 class="display-4 font-italic d-inline">Django Blog</h1>         
@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h1 class="display-4 mb-2 my-2">Article List</h1>
+                <h1 class="display-4 mb-2 my-2 text-center">Articles</h1>
                 <div>
                     {% for article in articles %}
                     <div class="card mb-4 box-shadow h-md-250">  
@@ -40,7 +40,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
                 <h4 class="display-4 mb-2 my-2">Tags</h1>
             </div>
         </div>
