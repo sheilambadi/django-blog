@@ -6,8 +6,9 @@ class Article(models.Model):
     slug = models.SlugField()
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    thumb = models.ImageField(default='default.png', blank=True)
 
-    #Thumbnail and author will be added later
+    #author will be added later
 
     #to display string version of object and not the object in the interactive shell and admin section
     def __str__(self):
