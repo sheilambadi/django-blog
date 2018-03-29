@@ -18,13 +18,13 @@
                     <div class="card mb-4 box-shadow h-md-250">                        
                         <div class="card-header bg-white">
                             <h3 class="mb-0">
-                                <a class = "text-dark" href="#">{{ article.title }}</a>
+                                <a class = "text-dark" href="{% url 'articles:article_detail' slug=article.slug%}">{{ article.title }}</a>
                             </h3>        
                         </div>
                         <div class="card-body">
                             <div class="card-text">
                                 <p class="lead">{{ article.snippet }}</p>
-                                <p class="md-2"><a href="#">Continue reading</a></p>
+                                <p class="md-2"><a href="{% url 'articles:article_detail' slug=article.slug%}">Continue reading</a></p>
                                 <p class="text-muted">{{ article.date }}</p>
                             </div>
                         </div>
