@@ -1,49 +1,49 @@
-{% extends 'base_layout.html' %}
+{% extends 'base_layout.html' %} {% block content %}
+<div class="jumbotron jumbotron-fluid text-white rounded bg-dark">
+    <div class="container text-center">
+        <h1 class="display-4 d-inline">Welcome to </h1>
+        <h1 class="display-4 font-italic d-inline">Django Blog</h1>
+        <p class="lead my-3"> We cover all things Django, Hop on board and let us sail :)</p>
+    </div>
+</div>
 
-{% block content %}
-    <div class="jumbotron jumbotron-fluid text-white rounded bg-dark">
-        <div class="container text-center">
-          <h1 class="display-4 d-inline">Welcome to </h1>
-          <h1 class="display-4 font-italic d-inline">Django Blog</h1>         
-          <p class="lead my-3"> We cover all things Django, Hop on board and let us sail :)</p>
-        </div>
-      </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="display-4 mb-2 my-2 text-center">Articles</h1>
+            <div>
+                {% for article in articles %}
+                <div class="card mb-4 box-shadow h-md-250">
+                    <img class="card-img-top" src="{{ article.thumb.url }}" alt="Image Here">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h3>
+                                <a class="text-dark" href="{% url 'articles:article_detail' slug=article.slug%}">{{ article.title }}</a>
+                            </h3>
+                        </div>
+                        <div class="card-text">
+                            <p class="lead article_snippet">{{ article.snippet }}</p>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <h1 class="display-4 mb-2 my-2 text-center">Articles</h1>
-                <div>
-                    {% for article in articles %}
-                    <div class="card mb-4 box-shadow h-md-250">  
-                        <img class="card-img-top" src="{{ article.thumb.url }}" alt="Image Here">                      
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h3>
-                                    <a class = "text-dark" href="{% url 'articles:article_detail' slug=article.slug%}">{{ article.title }}</a>
-                                </h3>        
-                            </div>
-                            <div class="card-text">
-                                <p class="lead article_snippet">{{ article.snippet }}</p>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <p><a href="{% url 'articles:article_detail' slug=article.slug%}">Continue reading</a></p>
-                                    </div>
-                                    <div class="col">
-                                        <p class="text-muted float-right">{{ article.date }}</p>
-                                    </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>
+                                        <a href="{% url 'articles:article_detail' slug=article.slug%}">Continue reading</a>
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="text-muted float-right">{{ article.date }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <h4 class="display-4 mb-2 my-2">Tags</h1>
+                {% endfor %}
             </div>
         </div>
-    </div>    
+        <div class="col-md-4 text-center">
+            <h4 class="display-4 mb-2 my-2">Tags</h1>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
