@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
@@ -8,7 +9,7 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField()
     #body = models.TextField()
-    body = RichTextField()
+    body = RichTextUploadingField()
     date = models.DateTimeField(auto_now_add=True)
     thumb = models.ImageField(default='default.jpg', blank=True)
 

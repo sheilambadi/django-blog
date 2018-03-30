@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'articles',
     'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,21 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'jquery/dist/jquery.min.js')
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_BROWSE_SHOW_DIRS = True
+
+AWS_QUERYSTRING_AUTH = False
+
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'Basic',
+    },
+}
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',       
+    },
+}

@@ -10,6 +10,7 @@ urlpatterns = [
     path('articles/', include('articles.urls')),
     path('about/', views.about),
     path('', views.homePage),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 #check if we are in debug mode before serving static files
