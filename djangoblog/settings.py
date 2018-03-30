@@ -137,20 +137,23 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-CKEDITOR_JQUERY_URL = os.path.join(STATIC_URL, 'jquery/dist/jquery.min.js')
-
+#where pictures to be uploaded are stored
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
+#arrange directories in upload according to date added
 CKEDITOR_BROWSE_SHOW_DIRS = True
 
+#for ckeditor to work with S3 storage
 AWS_QUERYSTRING_AUTH = False
 
+#configuration with more option ~ gets from default
 CKEDITOR_CONFIGS = {
     'awesome_ckeditor': {
         'toolbar': 'Basic',
     },
 }
 
+#default configuration of ckeditor
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',       
