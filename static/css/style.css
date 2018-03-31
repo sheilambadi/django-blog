@@ -8,3 +8,8 @@
   color: #212529;
   font-family: Lora, "Times New Roman", serif;
 }
+
+p>img {
+  max-width: 10px;
+  display: block;
+}
