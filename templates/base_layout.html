@@ -36,6 +36,7 @@
                         {% csrf_token %}
                         <button type="submit">Logout</button>
                     </form>
+                </li>
                 </ul>
             </div>
   </nav>  
@@ -45,5 +46,11 @@
 
     <script src={% static 'jquery/dist/jquery.slim.min.js' %}></script>
     <script src={% static 'bootstrap/dist/js/bootstrap.min.js' %}></script> 
+
+    <script>
+        jQuery(function($){
+            $('img').addClass('img-fluid');
+        });
+    </script>
 </body>    
 </html>
