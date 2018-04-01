@@ -2,7 +2,9 @@
 <div class="jumbotron jumbotron-fluid text-black rounded bg-white">
     <div class="container text-center">
         <h1 class="display-2">{{ article.title }}</h1>
-        <p class="lead d-inline">Posted on </p>
+        <p class="lead d-inline">Posted by </p>
+        <p class="lead d-inline text-muted">{{article.author}}</p>
+        <p class="lead d-inline"> on </p>
         <p class="lead d-inline text-muted">{{article.date}}</p>
     </div>
 </div>
