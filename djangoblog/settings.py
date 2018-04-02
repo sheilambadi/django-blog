@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'articles',
     'accounts',
+    'crispy_forms',
     'ckeditor',
     'ckeditor_uploader',
 ]
@@ -160,3 +161,5 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'full',       
     },
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
