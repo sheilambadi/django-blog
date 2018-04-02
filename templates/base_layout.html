@@ -19,7 +19,6 @@
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -29,33 +28,31 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'articles:create' %}">Create Article</a>
+                </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact Us</a>
                 </li>
-            </ul>
-            {% if user.is_authenticated %}
-            <ul>
-                <li><a href="{% url 'articles:create' %}">Create Article</a></li>
-            </ul>
-            <ul>
+                {% if user.is_authenticated %}
+                <form action="{% url 'accounts:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-link nav-link" type="submit">Logout</button>
+                </form>
+                {% else %}
                 <li class="nav-item">
-                    <form action="{% url 'accounts:logout' %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit">Logout</button>
-                    </form>
+                    <a class="nav-link" href="{% url 'accounts:login' %}">Log In</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accounts:signup' %}">Sign Up</a>
+                </li>
+                {% endif %}
             </ul>
-            {% else %}
-            <ul>
-                <li><a href="{% url 'accounts:login' %}">Log In</a></li>
-            </ul>
-            <ul>
-                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
-            </ul>
-            {% endif %}
         </div>
     </nav>
     {% block content %} {% endblock %}

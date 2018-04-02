@@ -9,7 +9,7 @@
   font-family: Lora, "Times New Roman", serif;
 }
 
-p>img {
-  max-width: 10px;
-  display: block;
+.articles {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
